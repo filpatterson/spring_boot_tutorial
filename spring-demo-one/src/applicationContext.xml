@@ -10,9 +10,14 @@
 	
     <!-- Define your beans here -->
     
-    <!-- Custom beans with coaches -->
-    <bean id = "myCoach" class = "com.filpatterson.init.TrackCoach"> </bean>
-    <bean id = "anotherCoach" class = "com.filpatterson.init.BaseballCoach"></bean>
+    <!-- Custom beans with coaches and service factory -->
+    <bean id = "myCoach" class = "com.filpatterson.init.TrackCoach"> 
+    	<constructor-arg ref = "happyFortuneService"/>
+    </bean>
+    <bean id = "anotherCoach" class = "com.filpatterson.init.BaseballCoach">
+    	<constructor-arg ref = "happyFortuneService"/>
+    </bean>
+    <bean id = "happyFortuneService" class = "com.filpatterson.init.HappyFortuneService"></bean>
     
     
 
