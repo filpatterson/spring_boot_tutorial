@@ -10,7 +10,9 @@
 	
     <!-- Define your beans here -->
     
+    <!-- Custom beans with coaches -->
     <bean id = "myCoach" class = "com.filpatterson.init.TrackCoach"> </bean>
+    <bean id = "anotherCoach" class = "com.filpatterson.init.BaseballCoach"></bean>
     
     
 
