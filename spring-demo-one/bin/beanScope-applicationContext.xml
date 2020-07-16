@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- setting special property file for entire application -->
+    <context:property-placeholder location = "classpath:application.properties"/>
+    
+    <!-- Custom beans with coaches and service factory -->
+    <bean id = "myCoach" class = "com.filpatterson.init.TrackCoach" scope = "prototype"> 
+    	<constructor-arg ref = "happyFortuneService"/>
+    </bean>
+    <bean id = "anotherCoach" class = "com.filpatterson.init.BaseballCoach">
+    	<constructor-arg ref = "happyFortuneService"/>
+    </bean>
+    <bean id = "cricketCoach" class = "com.filpatterson.init.CricketCoach">
+    	<property name = "fortuneService" ref = "happyFortuneService" />
+    	<property name="emailAddress" value = "${foo.email}"/>
+    	<property name="team" value = "${foo.team}"/>
+    </bean>
+    <bean id = "happyFortuneService" class = "com.filpatterson.init.HappyFortuneService"></bean>
+
+
+</beans>
