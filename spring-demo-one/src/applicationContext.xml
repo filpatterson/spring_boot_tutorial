@@ -8,7 +8,8 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	
-    <!-- Define your beans here -->
+    <!-- setting special property file for entire application -->
+    <context:property-placeholder location = "classpath:application.properties"/>
     
     <!-- Custom beans with coaches and service factory -->
     <bean id = "myCoach" class = "com.filpatterson.init.TrackCoach"> 
@@ -19,8 +20,8 @@
     </bean>
     <bean id = "cricketCoach" class = "com.filpatterson.init.CricketCoach">
     	<property name = "fortuneService" ref = "happyFortuneService" />
-    	<property name="emailAddress" value = "someBasicEmal@gmail.com"/>
-    	<property name="team" value = "sunrise"/>
+    	<property name="emailAddress" value = "${foo.email}"/>
+    	<property name="team" value = "${foo.team}"/>
     </bean>
     <bean id = "happyFortuneService" class = "com.filpatterson.init.HappyFortuneService"></bean>
     
