@@ -16,6 +16,8 @@ public class SpringHelloApp {
 		//	call methods of bean
 		System.out.println(theCoach.getDailyWorkout());
 		System.out.println(anotherCoach.getDailyWorkout());
+		
+		//	calling injected dependencies services
 		System.out.println(theCoach.getDailyFortune());
 		System.out.println(anotherCoach.getDailyFortune());
 		
