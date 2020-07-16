@@ -1,9 +1,11 @@
 package com.filpatterson.init;
 
+import org.springframework.beans.factory.DisposableBean;
+
 import com.filpatterson.init.interfaces.Coach;
 import com.filpatterson.init.interfaces.FortuneService;
 
-public class CricketCoach implements Coach{
+public class CricketCoach implements Coach, DisposableBean{
 	
 	//	class fields
 	private FortuneService fortuneService;
@@ -41,6 +43,9 @@ public class CricketCoach implements Coach{
 		return this.team;
 	}
 	
+	public String toString() {
+		return "This is Cricket Coach. His email: " + this.emailAddress + "; his team: " + this.team + ";";
+	}	
 	
 	//	overriding interfaces
 	@Override
@@ -53,7 +58,8 @@ public class CricketCoach implements Coach{
 		return "The only thing that i'm thinking about: " + this.fortuneService.getFortune();	
 	}
 	
-	public String toString() {
-		return "This is Cricket Coach. His email: " + this.emailAddress + "; his team: " + this.team + ";";
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("here is custom code for killing prototype bean");
 	}
 }
