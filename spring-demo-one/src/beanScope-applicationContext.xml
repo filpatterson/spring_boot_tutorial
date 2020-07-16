@@ -23,7 +23,7 @@
     	<property name="emailAddress" value = "${foo.email}"/>
     	<property name="team" value = "${foo.team}"/>
     </bean>
-    <bean id = "happyFortuneService" class = "com.filpatterson.init.HappyFortuneService"></bean>
+    <bean id = "happyFortuneService" class = "com.filpatterson.init.services.HappyFortuneService"></bean>
 
 
 </beans>

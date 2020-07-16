@@ -1,6 +1,8 @@
-package com.filpatterson.init;
+package com.filpatterson.init.apps;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.filpatterson.init.interfaces.Coach;
 
 public class SpringHelloApp {
 

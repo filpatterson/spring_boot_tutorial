@@ -1,6 +1,8 @@
-package com.filpatterson.init;
+package com.filpatterson.init.apps;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.filpatterson.init.interfaces.Coach;
 
 public class BeanScopeDemoApp {
 
@@ -14,7 +16,7 @@ public class BeanScopeDemoApp {
 		
 		
 		//	in default container scope is set as singleton, so container provides reference to the same object.
-		//	in "prototype" container scope each call to the container will produce new object
+		//	in "prototype" container scope each call to the container will produce new objects
 		if(theCoach == secondCoach)
 			System.out.println("they're the same object");
 		else

@@ -1,6 +1,8 @@
-package com.filpatterson.init;
+package com.filpatterson.init.services;
 
 import java.util.Random;
+
+import com.filpatterson.init.interfaces.FortuneService;
 
 public class HappyFortuneService implements FortuneService {
 	

@@ -1,3 +1,4 @@
+package com.filpatterson.init.apps;
 //package com.filpatterson.init;
 //
 //public class MyApp {

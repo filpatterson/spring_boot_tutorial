@@ -1,4 +1,4 @@
-package com.filpatterson.init;
+package com.filpatterson.init.interfaces;
 
 public interface Coach {
 	public String getDailyWorkout();
