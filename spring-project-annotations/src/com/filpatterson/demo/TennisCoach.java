@@ -9,6 +9,7 @@ import com.filpatterson.demo.interfaces.FortuneService;
 @Component
 public class TennisCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
 	
 	//	here is constructor injection, can be replaced by setter injection
@@ -16,14 +17,15 @@ public class TennisCoach implements Coach {
 //	TennisCoach(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;
 //	}
-	
-	TennisCoach() {
-	}
-	
-	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
-		this.fortuneService = fortuneService;
-	}
+
+	//	here is setter injection, can be replaced by field injection
+//	TennisCoach() {
+//	}
+//	
+//	@Autowired
+//	public void setFortuneService(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
 	
 	@Override
 	public String getDailyWorkout() {
