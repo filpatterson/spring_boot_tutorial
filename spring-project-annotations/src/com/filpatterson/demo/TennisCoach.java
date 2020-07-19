@@ -11,8 +11,17 @@ public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
+	//	here is constructor injection, can be replaced by setter injection
+//	@Autowired
+//	TennisCoach(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
+	
+	TennisCoach() {
+	}
+	
 	@Autowired
-	TennisCoach(FortuneService fortuneService) {
+	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 	
