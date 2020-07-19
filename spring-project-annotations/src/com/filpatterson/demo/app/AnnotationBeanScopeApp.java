@@ -11,14 +11,18 @@ public class AnnotationBeanScopeApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//	retrieve bean from the container
+		//	prototypes
 		Coach theCoach = context.getBean("cricketCoach", Coach.class);
 		Coach anotherCoach = context.getBean("cricketCoach", Coach.class);
+		//	singletons
 		Coach firstTennisCoach = context.getBean("tennisCoach", Coach.class);
 		Coach secondTennisCoach = context.getBean("tennisCoach", Coach.class);
 		
 		//	print info about objects
+		//	prototypes
 		System.out.println(theCoach);
 		System.out.println(anotherCoach);
+		//	singletons
 		System.out.println(firstTennisCoach);
 		System.out.println(secondTennisCoach);
 		
@@ -31,6 +35,11 @@ public class AnnotationBeanScopeApp {
 			System.out.println("tennis coaches are referencing to the single one");
 		else
 			System.out.println("those are different tennis coaches");
+		
+		context.getBeanFactory().destroyBean(theCoach);
+		context.getBeanFactory().destroyBean(anotherCoach);
+		
+		context.getBeanFactory().destroySingletons();
 		
 		//	close container
 		context.close();

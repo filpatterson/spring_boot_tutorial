@@ -1,5 +1,8 @@
 package com.filpatterson.demo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -30,6 +33,16 @@ public class CricketCoach implements Coach {
 //	public void setFortuneService(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;
 //	}
+	
+	@PostConstruct
+	public void doStartUpActions() {
+		System.out.println("here is startup for cricket coach");
+	}
+	
+	@PreDestroy
+	public void doCleanUpActions() {
+		System.out.println("here is clean up of cricket coach when it shuts down");
+	}
 	
 	@Override
 	public String getDailyWorkout() {

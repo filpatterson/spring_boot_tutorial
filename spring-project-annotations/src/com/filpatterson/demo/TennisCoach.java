@@ -1,5 +1,7 @@
 package com.filpatterson.demo;
 
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -28,6 +30,11 @@ public class TennisCoach implements Coach {
 //	public void setFortuneService(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;
 //	}
+	
+	@PreDestroy
+	public void doDestroyActions() {
+		System.out.println("tennis has died");
+	}
 	
 	@Override
 	public String getDailyWorkout() {
