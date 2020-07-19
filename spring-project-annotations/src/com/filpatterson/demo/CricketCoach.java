@@ -1,6 +1,7 @@
 package com.filpatterson.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.filpatterson.demo.interfaces.Coach;
@@ -10,6 +11,7 @@ import com.filpatterson.demo.interfaces.FortuneService;
 public class CricketCoach implements Coach {
 	
 	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	//	constructor injection, can be replaced by setter injection
