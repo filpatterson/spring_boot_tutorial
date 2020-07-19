@@ -7,18 +7,18 @@ import com.filpatterson.demo.interfaces.Coach;
 import com.filpatterson.demo.interfaces.FortuneService;
 
 @Component
-public class TennisCoach implements Coach {
-
+public class CricketCoach implements Coach {
+	
 	private FortuneService fortuneService;
 	
 	@Autowired
-	TennisCoach(FortuneService fortuneService) {
+	CricketCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 	
 	@Override
 	public String getDailyWorkout() {
-		return "this is new workout with annotations";
+		return "today I worked 30 minutes with cricket, it's not so much fun!";
 	}
 	
 	@Override
