@@ -22,9 +22,11 @@ public class CustomBeanFactoryService implements DisposableBean, BeanPostProcess
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		if(beanFactory.isPrototype(beanName))
+			//	protect object for being modified by many threads at moment 
 			synchronized (prototypeBeans) {
 				prototypeBeans.add(bean);
 			}
+		
 		return bean;
 	}
 
@@ -34,6 +36,9 @@ public class CustomBeanFactoryService implements DisposableBean, BeanPostProcess
 		synchronized (prototypeBeans) {
 			for(int i = 0; i < prototypeBeans.size(); i++) {
 				bean = prototypeBeans.get(i);
+				
+				//	check if bean is of removable type and if it is, then remove it from system using
+				// written destroy()
 				if(bean instanceof DisposableBean) {
 					DisposableBean disposable = (DisposableBean) bean;
 					try {
