@@ -16,7 +16,7 @@ public class CricketCoach implements Coach {
 	
 	//	constructor injection, can be replaced by setter injection
 //	@Autowired
-//	CricketCoach(FortuneService fortuneService) {
+//	CricketCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;
 //	}
 	
