@@ -11,7 +11,7 @@ import com.filpatterson.demo.interfaces.FortuneService;
 import com.filpatterson.demo.services.SadFortuneService;
 
 @Configuration
-@ComponentScan("com.filpatterson.demo")
+//@ComponentScan("com.filpatterson.demo")
 @PropertySource("classpath:fortuneService.properties")
 public class SportConfig {
 	//	define simple bean
@@ -24,5 +24,10 @@ public class SportConfig {
 	@Bean
 	public Coach swimCoach() {
 		return new SwimCoach(sadFortuneService());
+	}
+	
+	@Bean
+	public Coach gamerCoach() {
+		return new GamerCoach(sadFortuneService());
 	}
 }
