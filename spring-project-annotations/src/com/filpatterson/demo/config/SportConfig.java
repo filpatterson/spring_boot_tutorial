@@ -1,15 +1,18 @@
-package com.filpatterson.demo;
+package com.filpatterson.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+import com.filpatterson.demo.SwimCoach;
 import com.filpatterson.demo.interfaces.Coach;
 import com.filpatterson.demo.interfaces.FortuneService;
 import com.filpatterson.demo.services.SadFortuneService;
 
 @Configuration
 @ComponentScan("com.filpatterson.demo")
+@PropertySource("classpath:fortuneService.properties")
 public class SportConfig {
 	//	define simple bean
 	@Bean

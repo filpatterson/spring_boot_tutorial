@@ -3,7 +3,8 @@ package com.filpatterson.demo.app;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.filpatterson.demo.SportConfig;
+import com.filpatterson.demo.SwimCoach;
+import com.filpatterson.demo.config.SportConfig;
 import com.filpatterson.demo.interfaces.Coach;
 
 public class AnnotationDemoNoXmlApp {
@@ -43,9 +44,11 @@ public class AnnotationDemoNoXmlApp {
 //		
 //		context.getBeanFactory().destroySingletons();
 		
-		Coach swimmingCoach = context.getBean("swimCoach", Coach.class);
+		SwimCoach swimmingCoach = context.getBean("swimCoach", SwimCoach.class);
 		System.out.println(swimmingCoach.getDailyFortune());
 		System.out.println(swimmingCoach.getDailyWorkout());
+		System.out.println(swimmingCoach.getEmail());
+		System.out.println(swimmingCoach.getTeam());
 		
 		//	close container
 		context.close();
