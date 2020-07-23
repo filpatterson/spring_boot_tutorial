@@ -11,7 +11,8 @@ public class AnnotationDemoNoXmlApp {
 
 	public static void main(String[] args) {
 		//	read context from the class
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
+		AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext(SportConfig.class);
 		
 //		//	retrieve bean from the container
 //		//	prototypes
@@ -49,6 +50,12 @@ public class AnnotationDemoNoXmlApp {
 		System.out.println(swimmingCoach.getDailyWorkout());
 		System.out.println(swimmingCoach.getEmail());
 		System.out.println(swimmingCoach.getTeam());
+		
+		System.out.println("--------------------------------------\n\n");
+		
+		Coach gamerCoach = context.getBean("gamerCoach", Coach.class);
+		System.out.println(gamerCoach.getDailyFortune());
+		System.out.println(gamerCoach.getDailyWorkout());
 		
 		//	close container
 		context.close();
