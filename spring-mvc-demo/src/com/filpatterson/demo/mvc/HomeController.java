@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Component
 public class HomeController {
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping("/")
 	public String showPage(HttpServletResponse httpResponse) {
 		return "main-menu";
 	}
