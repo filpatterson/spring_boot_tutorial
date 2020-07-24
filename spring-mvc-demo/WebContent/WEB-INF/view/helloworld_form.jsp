@@ -7,7 +7,7 @@
 
 <body>
 
-	<form action="processForm" method="GET">
+	<form action="processFormV2" method="GET">
 		<!-- setting input of the text -->
 		<input type="text" name="studentName" placeholder="what's your name?"/>	
 		

@@ -6,7 +6,8 @@
 	
 	<br/>
 	
-	${param.studentName}
+	${message}
+	
 </body>
 
 </html>
