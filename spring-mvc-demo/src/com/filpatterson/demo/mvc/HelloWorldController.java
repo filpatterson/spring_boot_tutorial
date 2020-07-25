@@ -23,8 +23,9 @@ public class HelloWorldController {
 	
 	//	controller method with request handling using annotation requestParam
 	@RequestMapping("/processFormV2")
-	public String uppercaseTransform(@RequestParam("studentName") String name, Model model) {		
-		//	convert to uppercase
+	public String uppercaseTransform(@RequestParam("studentName") String name, 
+			Model model) {		
+		//	convert to upper-case
 		name = name.toUpperCase();
 		
 		//	add some object to the model with name "message" and value result
