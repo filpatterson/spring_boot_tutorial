@@ -22,7 +22,7 @@ import javax.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CourseCode {
 	//	default course code
-	public String value() default "FIL";
+	public String[] value() default "FIL";
 	
 	//	default error message
 	public String message() default "must start with FIL";
