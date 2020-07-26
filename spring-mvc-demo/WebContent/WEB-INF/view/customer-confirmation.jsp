@@ -7,7 +7,7 @@
 
 <body>
 
-	Confirmed that you're: ${customer.firstName } ${customer.lastName }
+	Confirmed that you're: ${customer.firstName } ${customer.lastName } with passes = ${customer.freePasses }
 
 </body>
 
