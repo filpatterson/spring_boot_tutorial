@@ -12,6 +12,10 @@
 	<br/>
 	
 	<a href="hello/showForm">Hello world form</a>
+	
+	<br/>
+	
+	<a href="customer/showForm">customer show form</a>
 
 </body>
 
