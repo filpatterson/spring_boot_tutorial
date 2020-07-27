@@ -27,6 +27,8 @@ public class Customer {
 	
 	@CourseCode(value= {"FIL", "BET"}, message="code must start with either FIL or BET")
 	private String courseCode;
+	
+	//	standard getters and setters
 
 	public String getFirstName() {
 		return firstName;
