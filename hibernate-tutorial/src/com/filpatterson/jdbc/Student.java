@@ -2,14 +2,17 @@ package com.filpatterson.jdbc;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="student")
 public class Student {
-	@Id										//	show that this is primary key
-	@Column(name="id")						//	show mapping to the column id of table student
+	@Id													//	show that this is primary key
+	@GeneratedValue(strategy=GenerationType.IDENTITY)	//	allow mysql to generate primary key (most common case)
+	@Column(name="id")									//	show mapping to the column id of table student
 	private int id;
 	
 	@Column(name="first_name")
