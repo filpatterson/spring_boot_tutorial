@@ -1,14 +1,18 @@
 package com.filpatterson.jdbc.demo;
 
+import java.text.ParseException;
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.filpatterson.jdbc.DateUtils;
 import com.filpatterson.jdbc.Student;
 
 public class CreateStudentDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
 		//		initialize factory, set configuration file (this is default value, not necessary to write it),
 		//	add class for connection with table
@@ -22,7 +26,7 @@ public class CreateStudentDemo {
 		
 		try {
 			System.out.println("Creating new student object");
-			Student student = new Student("Paul", "Wall", "somecode@gmail.com");
+			Student student = new Student("Paul", "Wall", "somecode@gmail.com", DateUtils.parseDate("12/12/1212"));
 			
 			//	start database operations
 			session.beginTransaction();
