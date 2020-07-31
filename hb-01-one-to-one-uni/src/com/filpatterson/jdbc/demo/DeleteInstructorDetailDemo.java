@@ -22,7 +22,10 @@ public class DeleteInstructorDetailDemo {
 			session.beginTransaction();
 			
 			//	get instructor from db with index 1
-			InstructorDetail instructorDetail = session.get(InstructorDetail.class, 2);
+			InstructorDetail instructorDetail = session.get(InstructorDetail.class, 3);
+			
+			//	break reference of instructor to the instructor detail
+			instructorDetail.getInstructor().setInstructorDetail(null);
 			
 			if(instructorDetail != null) {
 				System.out.println("deleting element...");

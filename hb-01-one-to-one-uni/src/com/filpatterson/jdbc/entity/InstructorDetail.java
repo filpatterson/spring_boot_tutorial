@@ -26,9 +26,11 @@ public class InstructorDetail {
 	
 	/**
 	 * 	This annotation makes hibernate check Instructor class for instructorDetail field
-	 * and check properties of connection there and find link of those two classes/entities
+	 * and check properties of connection there and find link of those two classes/entities.
+	 * also cascade is made to make the same changes as the original master table, except
+	 * delete operation
 	 */
-	@OneToOne(mappedBy="instructorDetail", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy="instructorDetail", cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private Instructor instructor;
 	
 	public InstructorDetail() {}
