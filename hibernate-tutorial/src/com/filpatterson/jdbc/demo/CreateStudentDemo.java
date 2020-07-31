@@ -1,7 +1,6 @@
 package com.filpatterson.jdbc.demo;
 
 import java.text.ParseException;
-import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

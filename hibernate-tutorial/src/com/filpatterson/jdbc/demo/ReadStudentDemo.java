@@ -1,6 +1,5 @@
 package com.filpatterson.jdbc.demo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -44,7 +43,7 @@ public class ReadStudentDemo {
 //		session.beginTransaction();
 		
 		//	get list of all students
-		List<Student> students = session.createQuery("from Student").getResultList();
+		List<?> students = session.createQuery("from Student").getResultList();
 		showStudents(students);
 		
 		//	perform getting all students
@@ -82,7 +81,7 @@ public class ReadStudentDemo {
 		factory.close();
 	}
 
-	private static void showStudents(List<Student> students) {
+	private static void showStudents(List<?> students) {
 		for(int i = 0; i < students.size(); i++)
 			System.out.println(students.get(i));
 	}

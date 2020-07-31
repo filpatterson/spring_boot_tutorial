@@ -1,6 +1,5 @@
 package com.filpatterson.jdbc;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class TestJdbc {
