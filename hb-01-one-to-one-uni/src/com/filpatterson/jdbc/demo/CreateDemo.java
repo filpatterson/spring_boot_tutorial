@@ -5,10 +5,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.filpatterson.jdbc.entity.DateUtils;
-import com.filpatterson.jdbc.entity.Student;
+import com.filpatterson.jdbc.entity.Instructor;
+import com.filpatterson.jdbc.entity.InstructorDetail;
 
-public class CreateStudentDemo {
+public class CreateDemo {
 
 	public static void main(String[] args) throws ParseException {
 		
@@ -16,22 +16,29 @@ public class CreateStudentDemo {
 		//	add class for connection with table
 		SessionFactory factory = new Configuration()
 									.configure("hibernate.cfg.xml")
-									.addAnnotatedClass(Student.class)
+									.addAnnotatedClass(Instructor.class)
+									.addAnnotatedClass(InstructorDetail.class)
 									.buildSessionFactory();
 		
 		//	create session
 		Session session = factory.getCurrentSession();
 		
 		try {
-			System.out.println("Creating new student object");
-			Student student = new Student("Paul", "Wall", "somecode@gmail.com", DateUtils.parseDate("12/12/1212"));
+			Instructor instructor = new Instructor("paul", "woker", "paul-woker-worker@gmail.com");
+			InstructorDetail instructorDetail = new InstructorDetail("paul-worker-official", "love working");
+			instructor.setInstructorDetail(instructorDetail);
+			
+			Instructor instructor2 = new Instructor("beatrice", "suspect", "beatrice-high-suspect@gmail.com");
+			InstructorDetail instructorDetail2 = new InstructorDetail("betriceX-official", "love coding");
+			instructor2.setInstructorDetail(instructorDetail2);
 			
 			//	start database operations
 			session.beginTransaction();
-			System.out.println("Saving the student..");
+			System.out.println("Saving the instructor..");
 			
 			//	make database operation
-			session.save(student);
+			session.save(instructor);
+			session.save(instructor2);
 			
 			//	finalize operations
 			session.getTransaction().commit();

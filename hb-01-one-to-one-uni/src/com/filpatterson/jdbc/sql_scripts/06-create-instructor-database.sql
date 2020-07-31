@@ -10,15 +10,15 @@ drop table if exists `instructor_detail`;
 
 create table `instructor_detail`(
 	`id`				int(11)	       		not null auto_increment,
-    `youtube_channel`	varchar(11)         default null,
-    `hobby`				varchar(11)			default null,
+    `youtube_channel`	varchar(45)         default null,
+    `hobby`				varchar(45)			default null,
     
     primary key (`id`)
 ) engine=InnoDB auto_increment=1 default charset=latin1;
 
-drop table if exists `instuctor`;
+drop table if exists `instructor`;
 
-create table `instuctor` (
+create table `instructor` (
 	`id`					int(11)				not null auto_increment,
     `first_name`			varchar(45)			default null,
     `last_name`				varchar(45)			default null,

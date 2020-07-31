@@ -1,4 +1,4 @@
-package com.filpatterson.jdbc.entity;
+package com.filpatterson.jdbc;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
