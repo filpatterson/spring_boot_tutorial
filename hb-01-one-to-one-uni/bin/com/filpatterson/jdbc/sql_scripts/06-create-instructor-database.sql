@@ -27,7 +27,7 @@ create table `instructor` (
     
     primary key (`id`),
     key `FK_DETAIL_idx` (`instructor_detail_id`),
-    constraint `FK_DETAIL_idx` foreign key (`instructor_detail_id`) references `instructor_detail` (`id`)
+    constraint `FK_DETAIL` foreign key (`instructor_detail_id`) references `instructor_detail` (`id`)
     on delete no action on update no action
 ) engine=InnoDB auto_increment=1 default charset=latin1;
 
