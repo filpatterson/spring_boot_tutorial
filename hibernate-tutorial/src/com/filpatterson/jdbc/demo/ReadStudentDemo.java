@@ -57,7 +57,8 @@ public class ReadStudentDemo {
 		session.beginTransaction();
 		
 		//	get students with lastname Cretu or name Beatrice
-		students = session.createQuery("from Student student where student.lastName='Cretu' or student.firstName='Beatrice'").getResultList();
+		students = session.createQuery("from Student student where student.lastName='Cretu' "
+				+ "or student.firstName='Beatrice'").getResultList();
 		showStudents(students);
 		
 		//	perform getting all students

@@ -1,7 +1,6 @@
 package com.filpatterson.demo.app;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.filpatterson.demo.SwimCoach;
 import com.filpatterson.demo.config.SportConfig;

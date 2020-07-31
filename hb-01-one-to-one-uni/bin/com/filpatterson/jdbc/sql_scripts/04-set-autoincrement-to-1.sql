@@ -1,0 +1,1 @@
+alter table hb_student_tracker auto_increment=1

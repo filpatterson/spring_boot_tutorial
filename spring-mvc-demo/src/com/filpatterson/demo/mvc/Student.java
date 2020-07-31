@@ -1,6 +1,5 @@
 package com.filpatterson.demo.mvc;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class Student {
