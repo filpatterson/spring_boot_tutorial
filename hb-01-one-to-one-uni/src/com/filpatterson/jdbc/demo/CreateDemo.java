@@ -42,9 +42,21 @@ public class CreateDemo {
 			
 			//	finalize operations
 			session.getTransaction().commit();
+			
+			session = factory.getCurrentSession();
+			session.beginTransaction();
+			
+			int indexOfElement = 2;
+			InstructorDetail instructorDetailRead = session.get(InstructorDetail.class, indexOfElement);
+			System.out.println(instructorDetailRead);
+			
+			session.getTransaction().commit();
 			System.out.println("done");
-		} finally {
+		} catch (Exception e){
+			e.printStackTrace();
+		}finally {
 			//	close factory for correct work
+			session.close();
 			factory.close();
 		}
 	}
