@@ -21,28 +21,38 @@ public class CreateAndGetOneToManyDemo {
 		Session session = factory.getCurrentSession();
 		
 		try {
+//			session.beginTransaction();
+//			
+//			Instructor instructor = new Instructor("beatrice", "XXX", "filpatterson10@gmail.com");
+//			InstructorDetail instructorDetail = new InstructorDetail("filpatterson-official", "love bad coding");
+//			instructor.setInstructorDetail(instructorDetail);
+//			
+//			Course course1 = new Course("asus learning");
+//			Course course2 = new Course("laptop processing");
+//			instructor.add(course1);
+//			instructor.add(course2);
+//			
+//			session.save(instructor);
+//			session.save(course1);
+//			session.save(course2);
+//			
+//			session.getTransaction().commit();
+//			
+//			session = factory.getCurrentSession();
+//			session.beginTransaction();
+//			
+//			Instructor readInstructor = session.get(Instructor.class, 8);
+//			System.out.println(readInstructor);
+//			
+//			session.getTransaction().commit();
+//			
+//			session = factory.getCurrentSession();
 			session.beginTransaction();
 			
-			Instructor instructor = new Instructor("beatrice", "XXX", "filpatterson10@gmail.com");
-			InstructorDetail instructorDetail = new InstructorDetail("filpatterson-official", "love bad coding");
-			instructor.setInstructorDetail(instructorDetail);
-			
-			Course course1 = new Course("asus learning");
-			Course course2 = new Course("laptop processing");
-			instructor.add(course1);
-			instructor.add(course2);
-			
-			session.save(instructor);
-			session.save(course1);
-			session.save(course2);
-			
-			session.getTransaction().commit();
-			
-			session = factory.getCurrentSession();
-			session.beginTransaction();
-			
-			Instructor readInstructor = session.get(Instructor.class, 8);
-			System.out.println(readInstructor);
+//			Course courseToDelete = session.get(Course.class, 15);
+//			session.delete(courseToDelete);
+			Instructor instructorToGet = session.get(Instructor.class, 5);
+			System.out.println(instructorToGet);
 			
 			session.getTransaction().commit();
 		} finally {
